@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgresql://freelancer_u8ep_user:naVhvLjm2bXByOFa2qXtBZbXvKdBHFvE@dpg-ctunbka3esus739ejbmg-a.oregon-postgres.render.com/freelancer_u8ep
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: freelancer_u8ep
+      POSTGRES_USER: freelancer_u8ep_user
+      POSTGRES_PASSWORD: naVhvLjm2bXByOFa2qXtBZbXvKdBHFvE
+
+volumes:
+  postgres_data:
