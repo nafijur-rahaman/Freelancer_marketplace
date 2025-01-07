@@ -53,7 +53,7 @@ class UserRegistrationApiView(APIView):
             token = default_token_generator.make_token(user)  # generate token of user
             uid = urlsafe_base64_encode(force_bytes(user.pk))  # more specified the confirmation link
 
-            confirm_link = f"http://127.0.0.1:8000/api/active/{uid}/{token}"  # link send for confirm
+            confirm_link = f"https://freelancer-marketplace-5lqt.vercel.app/api/active/{uid}/{token}"  # link send for confirm
             email_subject = "Confirm Registration"
 
             email_body = render_to_string('confirm_email.html', {'confirm_link': confirm_link})
