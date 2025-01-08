@@ -1,0 +1,58 @@
+# Django specific files
+*.log
+*.pot
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Local settings
+*.env
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# macOS specific files
+.DS_Store
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Python distribution packages
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Node.js dependencies (if applicable)
+node_modules/
+
+# Coverage reports
+.coverage
+*.cover
+*.py,cover
+
+# Pytest
+.pytest_cache/
+
+# PyCharm specific files (if using PyCharm)
+*.iml
+.idea/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Thumbnails
+*.thumb
+
+# Static files
+/static/
